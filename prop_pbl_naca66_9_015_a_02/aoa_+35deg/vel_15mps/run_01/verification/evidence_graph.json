@@ -1,0 +1,115 @@
+{
+  "study_id": "cascade_case_103_aoa+35_u15",
+  "nodes": [
+    {
+      "node_id": "req_01",
+      "category": "REQUIREMENT",
+      "label": "Cascade Requirements case_103_aoa+35_u15",
+      "content_hash": "f00bfb304b385b5930a9a2a4a47fb25eb19d58733179e0c2b4d04d4cf9bde62c",
+      "status": "VALID",
+      "properties": {},
+      "file_paths": [
+        "output/old/prop_pbl_naca66_9_015_a_02/aoa_+35deg/vel_15mps/run_01/requirements/resolved_requirements.json"
+      ],
+      "timestamp": 1793114066.4345927,
+      "invalidation_reason": null
+    },
+    {
+      "node_id": "geom_casc",
+      "category": "GEOMETRY",
+      "label": "Cascade Blades NACA 66(9)-015 AoA=35.0\u00b0",
+      "content_hash": "6247e7729684cbcbe9d9f23b76f5dacada096d6389179878212183f5ebc4e10f",
+      "status": "VALID",
+      "properties": {},
+      "file_paths": [
+        "output/old/prop_pbl_naca66_9_015_a_02/aoa_+35deg/geometry/dimensions.csv",
+        "output/old/prop_pbl_naca66_9_015_a_02/aoa_+35deg/geometry/coordinates/all_cascade_blades_coordinates.csv"
+      ],
+      "timestamp": 1793114066.43462,
+      "invalidation_reason": null
+    },
+    {
+      "node_id": "mesh_quad",
+      "category": "MESH",
+      "label": "Transfinite Blossom Quad Mesh",
+      "content_hash": "016fc19c5f4e39b2a86f0387f35a59184430a4957e51833514b81342c9a0956d",
+      "status": "VALID",
+      "properties": {},
+      "file_paths": [
+        "output/old/prop_pbl_naca66_9_015_a_02/aoa_+35deg/mesh/mesh.msh",
+        "output/old/prop_pbl_naca66_9_015_a_02/aoa_+35deg/vel_15mps/run_01/native_solver/mesh.txt"
+      ],
+      "timestamp": 1793114066.4346342,
+      "invalidation_reason": null
+    },
+    {
+      "node_id": "solv_simple",
+      "category": "EXECUTION_RUN",
+      "label": "Native SIMPLE FVM Solver with SA Turbulence",
+      "content_hash": "3d917b1b9d8e9dfc7004f8c598680fa4ddb0e0d695ab39e12ef62c7d9a168192",
+      "status": "VALID",
+      "properties": {},
+      "file_paths": [
+        "output/old/prop_pbl_naca66_9_015_a_02/aoa_+35deg/vel_15mps/run_01/native_solver/log.txt",
+        "output/old/prop_pbl_naca66_9_015_a_02/aoa_+35deg/vel_15mps/run_01/post/data/residuals.csv"
+      ],
+      "timestamp": 1793114066.4346464,
+      "invalidation_reason": null
+    },
+    {
+      "node_id": "res_forces",
+      "category": "FIELD_RESULT",
+      "label": "Aerodynamic Forces & Surface 10-Point Sampling",
+      "content_hash": "7abea27f57531bb3ff5e13b69e63eca9f241a45bc87b52859ef24d934c2cd1ba",
+      "status": "VALID",
+      "properties": {},
+      "file_paths": [
+        "output/old/prop_pbl_naca66_9_015_a_02/aoa_+35deg/vel_15mps/run_01/post/data/forces.csv",
+        "output/old/prop_pbl_naca66_9_015_a_02/aoa_+35deg/vel_15mps/run_01/post/data/foil_surface_sampled_10pts.csv"
+      ],
+      "timestamp": 1793114066.4346576,
+      "invalidation_reason": null
+    },
+    {
+      "node_id": "rep_pdf",
+      "category": "REPORT_DELIVERABLE",
+      "label": "Research Paper & Report",
+      "content_hash": "144a1e9e60fe372c322edb4259ccbdf6f5929fdea3790973040eae18c81919f9",
+      "status": "VALID",
+      "properties": {},
+      "file_paths": [
+        "output/old/prop_pbl_naca66_9_015_a_02/aoa_+35deg/vel_15mps/run_01/reports/research_paper.pdf",
+        "output/old/prop_pbl_naca66_9_015_a_02/aoa_+35deg/vel_15mps/run_01/reports/engineering_report.md"
+      ],
+      "timestamp": 1793114066.4346673,
+      "invalidation_reason": null
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "req_01",
+      "target_id": "geom_casc",
+      "relation": "SPECIFIES"
+    },
+    {
+      "source_id": "geom_casc",
+      "target_id": "mesh_quad",
+      "relation": "DISCRETIZES"
+    },
+    {
+      "source_id": "mesh_quad",
+      "target_id": "solv_simple",
+      "relation": "DISCRETIZES"
+    },
+    {
+      "source_id": "solv_simple",
+      "target_id": "res_forces",
+      "relation": "PRODUCES"
+    },
+    {
+      "source_id": "res_forces",
+      "target_id": "rep_pdf",
+      "relation": "SYNTHESIZES"
+    }
+  ]
+}
