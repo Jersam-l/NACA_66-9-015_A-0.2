@@ -1,0 +1,89 @@
+{
+  "mesher": "Jastrix Gmsh Frontal-Delaunay Blossom Mesher (QUAD)",
+  "backend": "gmsh",
+  "element_type": "quad",
+  "mesh_profile": "coarse_preliminary",
+  "global_size_factor": 0.75,
+  "mesh_size_basis": "edge",
+  "characteristic_size_min_m": 0.001125,
+  "characteristic_size_max_m": 0.002,
+  "nodes": 39357,
+  "cells": 38729,
+  "faces": 78088,
+  "quads": 38725,
+  "triangles": 4,
+  "inflation_layers": {
+    "enabled": true,
+    "first_cell_height_m": 1.71e-06,
+    "last_layer_height_m": 0.0006966317202042922,
+    "layer_count": 44,
+    "growth_ratio": 1.15,
+    "total_inflation_thickness_m": 0.005329443188232911,
+    "target_yplus": 1.0
+  },
+  "geometric_blockage_ratio": 0.6072842709571782,
+  "cascade_solidity": 2.0,
+  "inlet_radius_m": 0.14250000000000002,
+  "domain_height_m": 0.2933031565058625,
+  "quality": {
+    "status": "PASS",
+    "failures": [],
+    "inverted_cells": 0,
+    "min_scaled_jacobian": 0.10328522423153207,
+    "min_angle": 5.928379968706941,
+    "max_angle": 156.78423203802421,
+    "skew_mean": 0.054510002660572925,
+    "skew_p95": 0.2510771256951284,
+    "skew_max": 0.9011936671882176,
+    "ar_median": 1.0395969483937004,
+    "ar_p95": 1.3800216017191547,
+    "ar_max": 3.8165656924330884,
+    "ar_bulk_max": 3.8165656924330884,
+    "gate2_metrics": {
+      "outside_le_te": {
+        "sample_count": 265,
+        "ar": {
+          "min": 1.0084932209506359,
+          "mean": 1.153116240550995,
+          "p95": 1.4113421344091879,
+          "max": 2.1604047778396613,
+          "limit": 8.0,
+          "pass": true
+        },
+        "skewness": {
+          "min": 0.003966519238406837,
+          "mean": 0.09828055805613406,
+          "p95": 0.26718090664771343,
+          "max": 0.39226111665483077,
+          "limit": 0.7,
+          "pass": true
+        },
+        "min_angle_deg": {
+          "min": 55.720954330031454,
+          "mean": 81.8612497670938,
+          "p95": 88.34075615030024,
+          "max": 89.76012791186572,
+          "limit": 20.0,
+          "pass": true
+        }
+      },
+      "inside_inflation": {
+        "growth_ratio": {
+          "min": 1.15,
+          "mean": 1.15,
+          "p95": 1.15,
+          "max": 1.15,
+          "limit": 1.2,
+          "pass": true
+        },
+        "last_layer_vs_neighbor": {
+          "value": 1.0,
+          "limit": 1.5,
+          "pass": true
+        }
+      }
+    }
+  },
+  "status": "PASS",
+  "fingerprint": "326294510243a8e5cb430a784154c30ab8f50847215b97d7a4941f633d635cf0"
+}
