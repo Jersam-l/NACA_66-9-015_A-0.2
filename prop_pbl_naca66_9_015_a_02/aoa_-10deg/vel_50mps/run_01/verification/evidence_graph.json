@@ -1,0 +1,115 @@
+{
+  "study_id": "cascade_case_20_aoa-10_u50",
+  "nodes": [
+    {
+      "node_id": "req_01",
+      "category": "REQUIREMENT",
+      "label": "Cascade Requirements case_20_aoa-10_u50",
+      "content_hash": "285ded7b892bf18f55699b6f20d3da40cf01285ff1e4f0ccdc9b58d0f1d3faa6",
+      "status": "VALID",
+      "properties": {},
+      "file_paths": [
+        "output/old/prop_pbl_naca66_9_015_a_02/aoa_-10deg/vel_50mps/run_01/requirements/resolved_requirements.json"
+      ],
+      "timestamp": 1793104545.440283,
+      "invalidation_reason": null
+    },
+    {
+      "node_id": "geom_casc",
+      "category": "GEOMETRY",
+      "label": "Cascade Blades NACA 66(9)-015 AoA=-10.0\u00b0",
+      "content_hash": "c0f1bdade28f4cfd476c04b641fe538549432e7c8dc968fd532b715f6fa27126",
+      "status": "VALID",
+      "properties": {},
+      "file_paths": [
+        "output/old/prop_pbl_naca66_9_015_a_02/aoa_-10deg/geometry/dimensions.csv",
+        "output/old/prop_pbl_naca66_9_015_a_02/aoa_-10deg/geometry/coordinates/all_cascade_blades_coordinates.csv"
+      ],
+      "timestamp": 1793104545.4403057,
+      "invalidation_reason": null
+    },
+    {
+      "node_id": "mesh_quad",
+      "category": "MESH",
+      "label": "Transfinite Blossom Quad Mesh",
+      "content_hash": "016fc19c5f4e39b2a86f0387f35a59184430a4957e51833514b81342c9a0956d",
+      "status": "VALID",
+      "properties": {},
+      "file_paths": [
+        "output/old/prop_pbl_naca66_9_015_a_02/aoa_-10deg/mesh/mesh.msh",
+        "output/old/prop_pbl_naca66_9_015_a_02/aoa_-10deg/vel_50mps/run_01/native_solver/mesh.txt"
+      ],
+      "timestamp": 1793104545.4403183,
+      "invalidation_reason": null
+    },
+    {
+      "node_id": "solv_simple",
+      "category": "EXECUTION_RUN",
+      "label": "Native SIMPLE FVM Solver with SA Turbulence",
+      "content_hash": "30efc5da67d5879d976d0fa94d1890cf5098f9e56c410bb4c6a3c3de2b412cbd",
+      "status": "VALID",
+      "properties": {},
+      "file_paths": [
+        "output/old/prop_pbl_naca66_9_015_a_02/aoa_-10deg/vel_50mps/run_01/native_solver/log.txt",
+        "output/old/prop_pbl_naca66_9_015_a_02/aoa_-10deg/vel_50mps/run_01/post/data/residuals.csv"
+      ],
+      "timestamp": 1793104545.4403298,
+      "invalidation_reason": null
+    },
+    {
+      "node_id": "res_forces",
+      "category": "FIELD_RESULT",
+      "label": "Aerodynamic Forces & Surface 10-Point Sampling",
+      "content_hash": "778e0eae75affeb454d9e6b9a006927af0df81ac62d27bff8e9f8420e8010311",
+      "status": "VALID",
+      "properties": {},
+      "file_paths": [
+        "output/old/prop_pbl_naca66_9_015_a_02/aoa_-10deg/vel_50mps/run_01/post/data/forces.csv",
+        "output/old/prop_pbl_naca66_9_015_a_02/aoa_-10deg/vel_50mps/run_01/post/data/foil_surface_sampled_10pts.csv"
+      ],
+      "timestamp": 1793104545.4403403,
+      "invalidation_reason": null
+    },
+    {
+      "node_id": "rep_pdf",
+      "category": "REPORT_DELIVERABLE",
+      "label": "Research Paper & Report",
+      "content_hash": "5358714e9c538362b76aa040d4ef3701f821d5d69876412eac5de85bc56e47ce",
+      "status": "VALID",
+      "properties": {},
+      "file_paths": [
+        "output/old/prop_pbl_naca66_9_015_a_02/aoa_-10deg/vel_50mps/run_01/reports/research_paper.pdf",
+        "output/old/prop_pbl_naca66_9_015_a_02/aoa_-10deg/vel_50mps/run_01/reports/engineering_report.md"
+      ],
+      "timestamp": 1793104545.44035,
+      "invalidation_reason": null
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "req_01",
+      "target_id": "geom_casc",
+      "relation": "SPECIFIES"
+    },
+    {
+      "source_id": "geom_casc",
+      "target_id": "mesh_quad",
+      "relation": "DISCRETIZES"
+    },
+    {
+      "source_id": "mesh_quad",
+      "target_id": "solv_simple",
+      "relation": "DISCRETIZES"
+    },
+    {
+      "source_id": "solv_simple",
+      "target_id": "res_forces",
+      "relation": "PRODUCES"
+    },
+    {
+      "source_id": "res_forces",
+      "target_id": "rep_pdf",
+      "relation": "SYNTHESIZES"
+    }
+  ]
+}
